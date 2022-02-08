@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<!--@{
+}-->
+@model cargomanagementsystem.Entity.Model.Cust_details
+
+<form method="post" enctype="multipart/form-data">
+    <h2>Movie Entry</h2><hr />
+    <div class="form-group">
+        <label>Sender Name</label>
+        <input type="text" asp-for="Sender_name" class="form-control" placeholder="enter customer id" required />
+    </div>
+    <div class="form-group">
+        <label>Sender MobileNo</label>
+        <input type="text" asp-for="Sender_mobno" class="form-control" placeholder="enter type of goods" required />
+    </div>
+    <div class="form-group">
+        <label>Sender Address</label>
+        <input type="text" asp-for="Sender_address" class="form-control" placeholder="enter good quantity" required />
+    </div>
+    <div class="form-group">
+        <label>Sender City</label>
+        <input type="text" asp-for="Sender_City" class="form-control" placeholder="enter transaction amount" required />
+    </div>
+    <div class="form-group">
+        <label>Sender Pincode</label>
+        <input type="text" asp-for="Sender_pincode" class="form-control" placeholder="enter sending date" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver Name</label>
+        <input type="text" asp-for="Receiver_name" class="form-control" placeholder="enter source" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver Id</label>
+        <input type="text" asp-for="Receiver_id" class="form-control" placeholder="enter destination" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver MobileNo</label>
+        <input type="text" asp-for="Receiver_mobno" class="form-control" placeholder="enter destination" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver Address</label>
+        <input type="text" asp-for="Receiver_address" class="form-control" placeholder="enter destination" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver City</label>
+        <input type="text" asp-for="Receiver_city" class="form-control" placeholder="enter destination" required />
+    </div>
+    <div class="form-group">
+        <label>Receiver Pincode</label>
+        <input type="text" asp-for="Receiver_pincode" class="form-control" placeholder="enter destination" required />
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-outline-success" />
+    <input type="button" value="Update" class="btn btn-outline-secondary" />
+    <input type="button" value="Delete" class="btn btn-outline-secondary" />
+
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div> }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>}
+</form>
